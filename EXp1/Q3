@@ -1,0 +1,23 @@
+#include<iostream>
+using namespace std;
+
+class timesec{
+    private:
+    int h,m,s;
+    char c;
+    public:
+    void accept(){
+        cout<<"Enter time in HH:MM:SS format:";
+        cin>>h>>c>>m>>c>>s;
+    }
+    void display(){
+        int totalseconds = h*3600 +m*60 + s;
+        cout<<"Time in seconds is :"<<totalseconds;
+    }
+};
+int main(){
+    timesec tm;
+    tm.accept();
+    tm.display();
+return 0;
+}
