@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+class book{
+    char booktitle[10];
+    char authorname[20];
+    int price;
+    
+    public:
+    void accept(){
+        cout<<"Enter book title , author and price:";
+        cin>> booktitle>>authorname>> price;
+    }
+    void display(){
+        cout<<"\nTitle:"<<booktitle;
+        cout<<"\nAuthor:"<<authorname;
+        cout<<"\nPrice:"<<price;
+    }
+};
+int main(){
+    book b1;
+    book *pb= &b1;
+   
+    
+    pb ->accept();
+    pb ->display();
+    
+return 0;
+}
