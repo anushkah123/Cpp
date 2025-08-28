@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+class student{
+    int roll_number;
+    int percentage;
+    
+    public:
+    void accept(){
+        cout<<"Enterroll number and percentage:";
+        cin>> roll_number>>percentage;
+    }
+    void display(){
+        cout<<"\nRoll Number:"<<roll_number;
+        cout<<"\nPercentage:"<<percentage;
+    }
+};
+int main(){
+    student s1;
+    student *ptr;
+    ptr = &s1;
+    
+    ptr ->accept();
+    cout<<"Student details:";
+    ptr->display();
+return 0;
+}
