@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+
+class student{
+    private:
+    int roll_num;
+    char name[7];
+    public:
+    void accept(){
+        cout<<"Enter roll number:";
+        cin>>roll_num;
+        cout<<"Enter name:";
+        cin>>name;
+    }
+    void display(){
+        cout<<"Roll Number:"<<roll_num<<endl;
+        cout<<"Name:"<<name;
+    }
+    
+};
+int main(){
+    student s1;
+    s1.accept();
+    s1.display();
+    
+    return 0;
+    
+}
