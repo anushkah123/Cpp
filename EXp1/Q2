@@ -1,0 +1,33 @@
+class book{
+    public:
+    string b_name;
+    int b_price;
+    int b_pages;
+ 
+    void accept(){
+        cout<<"Enter book name,price and pages:";
+        cin>>b_name>>b_price>>b_pages;
+    }
+    void display(){
+        cout<<"Book Name:"<<b_name;
+        cout<<"\nBook Price:"<<b_price;
+        cout<<"\nBook Pages:"<<b_pages;
+    }
+    
+};
+int main(){
+    book b1,b2;
+    cout<<"Enter details for Book 1:\n";
+    b1.accept();
+    cout<<"Enter details for Book 2:\n";
+    b2.accept();
+    
+    cout<<"Deltails of book with greater price is:\n";
+    if(b1.b_price > b2.b_price){
+        b1.display();
+    }
+    else{
+        b2.display();
+    }
+return 0;
+}
