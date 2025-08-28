@@ -1,0 +1,36 @@
+#include<iostream>
+#include <string>
+using namespace std;
+
+class staff{
+    public:
+    string name;
+    string post;
+    
+    void accept(){
+        cout<<"Enter staff name :";
+        getline(cin ,name);
+        cout<<"Enter staff post:";
+        getline(cin, post);
+        
+    }
+    void display(){
+        cout<<"\nName:"<<name;
+        cout<<"\nPost:"<<post;
+    }
+};
+int main(){
+    staff arr[5];
+    int i;
+    
+    for(i=0;i<5;i++){
+        arr[i].accept();
+    }
+    for(i=0;i<5;i++){
+        if(arr[i].post=="HOD"){
+            arr[i].display();
+        }
+
+    }
+return 0;
+}
