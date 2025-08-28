@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+
+class city{
+    public:
+    char name[10];
+    int pop;
+    
+    void accept(){
+        cout<<"Enter city name and population:";
+        cin>>name>>pop;
+    }
+    void display(){
+        cout<<"City name:"<<name;
+        cout<<"\n Population:"<<pop;
+    }
+};
+int main(){
+    city c[5];
+    int i;
+    int max = 0;
+    
+    for(i=0;i<5;i++){
+        c[i].accept();
+    }
+    
+    for(i=0;i<5;i++){
+        if (c[max].pop < c[i].pop){
+            max = i;
+        }
+    }
+cout<<"City with maximum population is:\n";
+c[max].display();
+
+return 0;
+}
