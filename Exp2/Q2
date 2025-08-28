@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+
+class Account{
+    public:
+    int acc_no;
+    int bal;
+    
+    void accept(){
+        cout<<"Enter account number and balance:";
+        cin>>acc_no>>bal;
+    }
+    void display(){
+        cout<<"Account name:\n"<<acc_no;
+        cout<<"\nBalance:\n"<<bal;
+    }
+};
+int main(){
+    Account arr[10];
+    int i;
+    
+    for (i=0;i<10;i++){
+        arr[i].accept();
+    }
+    for (i=0;i<10;i++){
+     if (arr[i].bal > 5000){
+         arr[i].bal *= 0.1;
+         arr[i].display();
+        
+    }
+  }
+ return 0;
+}
