@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+class Sum {
+    int n;
+    int sum = 0;
+
+public:
+    Sum(int num) {
+        n = num;
+        for (int i = 1; i <= n; i++) {
+            sum += i;
+        }
+    }
+
+    void display() {
+        cout << "Sum = " << sum << endl;
+    }
+};
+
+int main() {
+    Sum s1(5);   
+    s1.display(); 
+    return 0;
+}
