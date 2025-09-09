@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+class Student {
+    string name;
+    float percentage;
+
+public:
+    Student(string n, float p) {
+        name = n;
+        percentage = p;
+    }
+    Student(const Student &s) {
+        name = s.name;
+        percentage = s.percentage;
+    }
+
+    void display() {
+        cout << "Name: " << name << endl;
+        cout << "Percentage: " << percentage << "%" << endl;
+    }
+};
+
+int main() {
+    string n;
+    float p;
+
+    cout << "Enter Student Name: ";
+    getline(cin, n);
+
+    cout << "Enter Percentage: ";
+    cin >> p;
+    Student s1(n, p);
+    Student s2(s1);
+
+    cout << "\nStudent Data (Copied using Copy Constructor):" << endl;
+    s2.display();
+
+    return 0;
+}
