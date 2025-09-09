@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+class Student {
+    string name;
+    float percentage;
+
+public:
+   
+    Student() {
+        name = "Anushka";
+        percentage = 90.0;
+    }
+
+    void display() {
+        cout << "Name: " << name << ", Percentage: " << percentage << endl;
+    }
+};
+
+int main() {
+    Student s1;     
+    s1.display();   
+    return 0;
+}
