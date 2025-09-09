@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+class Student {
+    float per;
+    string name;
+
+public:
+   
+    Student(float p, string n) {
+        per = p;
+        name = n;
+    }
+
+    void display() {
+        cout << "Name: " << name << endl;
+        cout << "Percentage: " << per << endl;
+    }
+};
+
+int main() {
+    Student s1(90, "Anushka");  
+    s1.display();
+
+    return 0;
+}
