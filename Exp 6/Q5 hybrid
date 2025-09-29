@@ -1,0 +1,56 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Person {
+    protected:
+    string name;
+    int age;
+    
+};
+class student : public Person{
+    protected:
+    int roll_no;
+    
+};
+class sports {
+    protected:
+    int s_marks;
+    
+};
+
+class academics {
+    protected:
+    int a_marks;
+    
+};
+class result : public student , public sports,public academics{
+    int total;
+    
+    public:
+    
+    void accept(){
+        cout<<"Enter name,age,rollno,sport marks,academic marks:";
+        cin>>name>>age>>roll_no>>s_marks>>a_marks;
+         total = s_marks + a_marks;
+    }
+     
+    void display(){
+        cout<<"Name:"<<name;
+        cout<<"\nAge:"<<age;
+        cout<<"\nRoll no:"<<roll_no;
+        cout<<"\nSports marks:"<<s_marks;
+         cout<<"\nAcademic marks:"<<a_marks;
+         cout<<"\nTotal:"<<total;
+        
+    }
+};
+
+int main(){
+    result r;
+    r.accept();
+    r.display();
+    
+return 0;
+}
+
