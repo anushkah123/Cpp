@@ -1,0 +1,47 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Academics{
+    protected:
+    int marks;
+    public:
+    void getmarks(){
+        cout<<"Enter marks:";
+        cin>>marks;
+    }
+};
+class Sports{
+    protected:
+    int sports_score;
+    
+    public:
+     void getscore(){
+        cout<<"Enter score:";
+        cin>>sports_score;
+    }
+    
+};
+
+class Result : public Academics , public Sports{
+    private:
+    int total_score;
+    public:
+    void calculate(){
+        total_score = marks+sports_score;
+        cout<<"Marks:"<<marks;
+        cout<<"Score:"<<sports_score;
+        cout<<"Total Score:"<<total_score;
+    }
+    
+};
+
+int main(){
+    Result r;
+    r.getmarks();
+    r.getscore();
+    r.calculate();
+    
+return 0;
+}
+
