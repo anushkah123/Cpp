@@ -1,0 +1,73 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Employee {
+protected:
+    int emp_id;
+    string name;
+
+public:
+    void getEmployeeDetails() {
+        cout << "Enter emp_id and name: ";
+        cin >> emp_id >> name;
+    }
+
+    void showEmployeeDetails() {
+        cout << "Employee id: " << emp_id << endl;
+        cout << "Name: " << name << endl;
+    }
+};
+
+class Manager : public Employee {
+private:
+    string department;
+
+public:
+    void getManagerDetails() {
+        getEmployeeDetails();
+        cout << "Enter department: ";
+        cin >> department;
+    }
+
+    void showManagerDetails() {
+        showEmployeeDetails();
+        cout << "Department: " << department << endl;
+    }
+};
+
+class Developer : public Employee {
+private:
+    string progLang;
+
+public:
+    void getDeveloperDetails() {
+        88;
+        cout << "Enter Programming Language: ";
+        cin >> progLang;
+    }
+
+    void showDeveloperDetails() {
+        showEmployeeDetails();
+        cout << "Programming Language: " << progLang << endl;
+    }
+};
+
+int main() {
+    Manager m;
+    Developer d;
+
+    cout << "--- Enter Manager Details ---" << endl;
+    m.getManagerDetails();
+
+    cout << "\n--- Enter Developer Details ---" << endl;
+    d.getDeveloperDetails();
+
+    cout << "\n--- Manager Info ---" << endl;
+    m.showManagerDetails();
+
+    cout << "\n--- Developer Info ---" << endl;
+    d.showDeveloperDetails();
+
+    return 0;
+}
