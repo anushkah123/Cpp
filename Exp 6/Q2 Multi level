@@ -1,0 +1,51 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Vehicle {
+protected:
+    string brand;
+    string model;
+};
+
+class Car : protected Vehicle {
+protected:
+    string type;
+};
+
+class ElectricCar : protected Car {
+private:
+    float batteryCapacity;
+
+public:
+    void accept() {
+        cin.ignore(); 
+        cout << "Enter Vehicle brand: ";
+        getline(cin, brand);
+
+        cout << "Enter Vehicle model: ";
+        getline(cin, model);
+
+        cout << "Enter Vehicle type: ";
+        getline(cin, type);
+
+        cout << "Enter Battery capacity (kWh): ";
+        cin >> batteryCapacity;
+    }
+
+    void display() {
+        cout << "\n--- Electric Car Details ---\n";
+        cout << "Brand: " << brand << endl;
+        cout << "Model: " << model << endl;
+        cout << "Type: " << type << endl;
+        cout << "Battery Capacity: " << batteryCapacity << " kWh" << endl;
+    }
+};
+
+int main() {
+    ElectricCar c;
+    c.accept();
+    c.display();
+
+    return 0;
+}
