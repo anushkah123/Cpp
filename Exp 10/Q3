@@ -1,0 +1,96 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+template <class T>
+class Calculator {
+    T num1, num2;
+
+public:
+    void acceptTwo() {
+        cout << "Enter first number: ";
+        cin >> num1;
+        cout << "Enter second number: ";
+        cin >> num2;
+    }
+
+    void acceptOne() {
+        cout << "Enter number: ";
+        cin >> num1;
+    }
+
+    
+    void addition()      
+    { cout << "Sum = " << num1 + num2 << endl; }
+    void subtraction()   
+    { cout << "Difference = " << num1 - num2 << endl; }
+    void multiplication() 
+    { cout << "Product = " << num1 * num2 << endl; }
+    void division() {
+        if (num2 != 0) cout << "Quotient = " << num1 / num2 << endl;
+        else cout << "Error: Division by 0" << endl;
+    }
+    void modulus() {
+        cout << "Modulus = " << (int)num1 % (int)num2 << endl;
+    }
+
+    
+    void sine_op()   
+    { cout << "Sin = " << sin(num1) << endl; }
+    void cosine_op() 
+    { cout << "Cos = " << cos(num1) << endl; }
+    void tangent_op()
+    { cout << "Tan = " << tan(num1) << endl; }
+
+    
+    void square_root() 
+    { cout << "Square Root = " << sqrt(num1) << endl; }
+    void power_op()   
+    { cout << "Power = " << pow(num1, num2) << endl; }
+};
+
+int main() {
+    Calculator<double> obj;
+    int choice;
+
+    cout << "Calculator Menu:\n";
+    cout << "1. Addition\n";
+    cout << "2. Subtraction\n";
+    cout << "3. Multiplication\n";
+    cout << "4. Division\n";
+    cout << "5. Modulus\n";
+    cout << "6. Sine\n";
+    cout << "7. Cosine\n";
+    cout << "8. Tangent\n";
+    cout << "9. Square Root\n";
+    cout << "10. Power\n";
+    
+    cout << "Enter your choice: ";
+    cin >> choice;
+
+    // 1–5 and 10 need two numbers
+    if (choice >= 1 && choice <= 5 || choice == 10) {
+        obj.acceptTwo();
+    }
+    // 6–9 need only one number
+    else if (choice >= 6 && choice <= 9) {
+        obj.acceptOne();
+    }
+
+    switch (choice) {
+        case 1: obj.addition(); break;
+        case 2: obj.subtraction(); break;
+        case 3: obj.multiplication(); break;
+        case 4: obj.division(); break;
+        case 5: obj.modulus(); break;
+        case 6: obj.sine_op(); break;
+        case 7: obj.cosine_op(); break;
+        case 8: obj.tangent_op(); break;
+        case 9: obj.square_root(); break;
+        case 10: obj.power_op(); break;
+        default:
+            cout << "Invalid choice!" << endl;
+    }
+
+    return 0;
+}
