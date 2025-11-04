@@ -1,0 +1,54 @@
+#include <iostream>
+#include <stack>
+using namespace std;
+
+int main() {
+    stack<int> s;
+    int ch, x;
+
+    do {
+        cout << "\n1. Push\n2. Pop\n3. Top\n4. Size\n5. Exit\n";
+        cout << "Enter choice: ";
+        cin >> ch;
+
+        switch(ch) {
+
+            case 1:
+                cout << "Enter value: ";
+                cin >> x;
+                s.push(x);
+                break;
+
+            case 2:
+                if(!s.empty()) {
+                    s.pop();
+                    cout << "Popped.\n";
+                } else {
+                    cout << "Stack empty.\n";
+                }
+                break;
+
+            case 3:
+                if(!s.empty()) {
+                    cout << "Top = " << s.top() << endl;
+                } else {
+                    cout << "Stack empty.\n";
+                }
+                break;
+
+            case 4:
+                cout << "Size = " << s.size() << endl;
+                break;
+
+            case 5:
+                cout << "Exit.\n";
+                break;
+
+            default:
+                cout << "Invalid.\n";
+        }
+
+    } while(ch != 5);
+
+    return 0;
+}
