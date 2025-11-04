@@ -1,0 +1,68 @@
+// Experiment - 11
+// Create a vector
+// 1) Modify
+// 2) Multiply by scalar
+// 3) Display
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+template <class T>
+class Vector {
+    vector<T> v;
+public:
+    void createVector(int n) {
+        cout << "Enter " << n << " elements:\n";
+        v.resize(n);
+        for (int i = 0; i < n; i++)
+            cin >> v[i];
+    }
+
+    void modify(int index, T value) {
+        if (index >= 0 && index < v.size())
+            v[index] = value;
+        else
+            cout << "Invalid index!\n";
+    }
+
+    void multiplyByScalar(T scalar) {
+        for (int i = 0; i < v.size(); i++)
+            v[i] *= scalar;
+    }
+
+    void display() {
+        cout << "Vector elements: ";
+        for (int i = 0; i < v.size(); i++)
+            cout << v[i] << " ";
+        cout << "\n";
+    }
+};
+
+int main() {
+    Vector<int> vec;
+    int n, index, newValue, scalar;
+
+    cout << "Enter size of vector: ";
+    cin >> n;
+    vec.createVector(n);
+
+    cout << "Original vector: ";
+    vec.display();
+
+    cout << "Enter index and new value to modify: ";
+    cin >> index >> newValue;
+    vec.modify(index, newValue);
+
+    cout << "After modification: ";
+    vec.display();
+
+    cout << "Enter scalar to multiply: ";
+    cin >> scalar;
+    vec.multiplyByScalar(scalar);
+
+    cout << "After multiplication: ";
+    vec.display();
+
+    return 0;
+}
