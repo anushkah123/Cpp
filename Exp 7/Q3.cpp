@@ -2,28 +2,42 @@
 using namespace std;
 
 class Number {
-    int x;
+private:
+    int value;
 
 public:
-    Number(int a) {
-        x = a;
+    Number(int v = 0) { 
+        value = v; //parameterized 
+    }
+
+    // Pre-increment: ++x
+    void operator++() {
+        value++;        // actual operation
+    }
+
+    // Post-increment: x++
+    void operator++(int) {
+        value++;        // actual operation
     }
 
     void display() {
-        cout << "Value: " << x << endl;
-    }
-
-    void operator++() {
-        ++x;
+        cout << value << endl;
     }
 };
 
 int main() {
     Number n(5);
+
+    cout << "Original value: ";
     n.display();
-    ++n;
+
+    ++n;   // pre-increment
+    cout << "After pre-increment (++n): ";
     n.display();
-    n++;
+
+    n++;   // post-increment
+    cout << "After post-increment (n++): ";
     n.display();
+
     return 0;
 }
