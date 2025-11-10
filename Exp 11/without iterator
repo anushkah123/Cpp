@@ -66,3 +66,51 @@ int main() {
 
     return 0;
 }
+
+
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+    // create vector of size 10
+    vector<int> v(10);
+    unsigned int i;
+
+    cout << "Initial size = " << v.size() << endl;
+
+    // assign values 1 to 10
+    for (i = 0; i < 10; i++)
+        v[i] = i + 1;
+
+    // display original contents
+    cout << "Current contents: ";
+    for (i = 0; i < v.size(); i++)
+        cout << v[i] << " ";
+    cout << "\n\n";
+
+    cout << "Expanding vector\n";
+
+    // push new values 11 to 20
+    for (i = 0; i < 10; i++)
+        v.push_back(i + 11);
+
+    // display expanded contents
+    cout << "Current contents: ";
+    for (i = 0; i < v.size(); i++)
+        cout << v[i] << " ";
+    cout << "\n\n";
+
+    // modify contents (example: multiply each value by 2)
+    for (i = 0; i < v.size(); i++)
+        v[i] = v[i] * 2;
+
+    cout << "Modified contents: ";
+    for (i = 0; i < v.size(); i++)
+        cout << v[i] << " ";
+    cout << endl;
+
+    return 0;
+}
