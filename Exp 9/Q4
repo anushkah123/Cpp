@@ -1,0 +1,30 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main() {
+    ofstream outputFile("input.txt");
+    if (!outputFile) {
+        cout << "Cannot create input.txt" << endl;
+        return 1;
+    }
+    outputFile << "Hello 123 this 45 is a test 9";
+    outputFile.close();
+
+    ifstream inputFile("input.txt");
+    if (!inputFile) {
+        cout << "Cannot open input.txt" << endl;
+        return 1;
+    }
+
+    string word;
+    size_t wordcount = 0;
+    while (inputFile >> word) {
+        ++wordcount;
+    }
+    inputFile.close();
+
+    cout << "Total number of words: " << wordcount << endl;
+    return 0;
+}
